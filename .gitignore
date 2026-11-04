@@ -1,0 +1,19 @@
+# 依存パッケージ・ビルド結果
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+
+# 参考動画と、そこから書き出した静止画(第三者の映像の可能性があるため公開しない)
+reference/
+
+# Python の一時ファイル
+__pycache__/
+*.pyc
+
+# その他
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

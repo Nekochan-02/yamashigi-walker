@@ -1,0 +1,39 @@
+# Windows 用のアプリをビルドして、できあがったファイルを保存する(公開はしない)
+name: build-windows
+
+on:
+  workflow_dispatch: # GitHub の画面から手動で実行
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: "./src-tauri -> target"
+
+      - run: npm ci
+
+      - name: テスト(動きの決まりごと)
+        run: npm test
+
+      - name: アプリをビルド
+        run: npm run tauri build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yamashigi-walker-windows
+          path: |
+            src-tauri/target/release/yamashigi-walker.exe
+            src-tauri/target/release/bundle/nsis/*.exe

@@ -1,0 +1,34 @@
+{
+  "frameWidth": 72,
+  "frameHeight": 48,
+  "columns": 8,
+  "facing": "right",
+  "groundY": 44,
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 2,
+      "fps": 2
+    },
+    "step": {
+      "row": 1,
+      "frames": 3,
+      "fps": 8
+    },
+    "rock": {
+      "row": 2,
+      "frames": 6,
+      "fps": 10
+    },
+    "flare": {
+      "row": 3,
+      "frames": 6,
+      "fps": 10
+    },
+    "peck": {
+      "row": 4,
+      "frames": 4,
+      "fps": 7
+    }
+  }
+}

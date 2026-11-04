@@ -1,0 +1,24 @@
+{
+  "frameWidth": 72,
+  "frameHeight": 48,
+  "columns": 6,
+  "facing": "right",
+  "groundY": 44,
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 2,
+      "fps": 2
+    },
+    "walk": {
+      "row": 1,
+      "frames": 6,
+      "fps": 8
+    },
+    "peck": {
+      "row": 2,
+      "frames": 4,
+      "fps": 7
+    }
+  }
+}
